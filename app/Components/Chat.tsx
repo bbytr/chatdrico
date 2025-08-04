@@ -1,3 +1,4 @@
+import { ArrowUp } from 'lucide-react'
 import React from 'react'
 
 const Chat = ({ decodedlink }: { decodedlink: string }) => {
@@ -10,11 +11,17 @@ const Chat = ({ decodedlink }: { decodedlink: string }) => {
                 </div>
             </div>
             <div></div>
-            <form className='absolute bottom-4 left-4 right-4 md:left-auto md:right-auto md:w-full mad:max-w-4xl
+            <form className='absolute bottom-4 left-4 right-4 md:left-auto md:right-auto md:w-2/3 mad:max-w-4xl
         p-4 rounded-3xl border border-amber-300 flex items-center'>
 
                 <div className='w-full'>
-                    <textarea className='w-full outline'></textarea>
+                    <textarea className='w-full outline-0 resize-none h-full bg-transparent mp-4'></textarea>
+                    <div className='flex justify-between items-center'>
+                        <div className='badge badge-soft badge-success badge-lg'>
+                            talk.IA
+                        </div>
+                         <button className='btn btn-circle btn-primary'><ArrowUp /></button>
+                    </div>
                 </div>
 
             </form>
