@@ -41,8 +41,12 @@ const page = async ({params} : PageProps) => {
     await redis.sadd("indexed-urls",decodelink)
   }
 
+  const initialMessage = await ragChat.history.getMessages({ amount: 10, sessionId})
+
   return (
-    <Chat decodedlink={decodelink}></Chat>
+    <Chat decodedlink={decodelink}
+          sessionId={sessionId}
+          initialMessage={initialMessage}></Chat>
   )
 }
 

@@ -1,7 +1,17 @@
+
 import { ArrowUp } from 'lucide-react'
+import { Message, useChat } from 'ai/react'
 import React from 'react'
 
-const Chat = ({ decodedlink }: { decodedlink: string }) => {
+const Chat = ({ decodedlink , sessionId , initialMessage }: { decodedlink: string , sessionId?: string , initialMessage: Message []}) => {
+   
+    const {messages , handleInputChange, handleSubmit, input} = useChat({
+        api: "/api/chat-stream",
+        body: {sessionId},
+        initialMessage
+
+    })
+    
     return (
         <div className=' flex flex-col items-center p-4 relative h-screen'>
             <div className='mb-4'>
